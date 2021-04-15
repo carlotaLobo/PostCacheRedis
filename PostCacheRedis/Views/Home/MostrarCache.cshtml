@@ -1,0 +1,23 @@
+﻿@model List<Materials>
+
+<div class="jumbotron">
+    <h1>Guardado en Caché Redis</h1>
+</div>
+@if (Model != null)
+{
+    <li class="list-group">
+        @foreach (Materials m in Model)
+        {
+            <ul class="list-group-item">
+                @m.Material
+            </ul>
+        }
+
+    </li>
+    @if (Model.Count() <= 0)
+    {
+
+        <div class="alert-danger m-4"> No hay nada guardado en Redis, todavía</div>
+
+    }
+}

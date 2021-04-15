@@ -1,0 +1,18 @@
+﻿@model List<Materials>
+    
+    <a asp-action="MostrarCache" asp-controller="Home" class="btn btn-info m-3">Ver caché Redis</a>
+    <a asp-action="EliminarCache" asp-controller="Home" class="btn btn-danger m-3">Eliminar caché Redis</a>
+
+    <div class="row">
+        @foreach (Materials m in Model)
+        {
+            <div class="col m-3">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">@m.Material</h5>
+                        <a asp-action="GuardarCache" asp-controller="Home" asp-route-id="@m.Material" class="btn btn-success">Guardar</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
